@@ -13,7 +13,9 @@ public class DaoAnswer implements Dao<Answer>, Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @PersistenceContext(name = "questionUnit", type = PersistenceContextType.EXTENDED)
+    // TRANSACTION - when method called then container add new entityManager
+    // when method finished (and transactions finished too) entityManager will be closed
+    @PersistenceContext(name = "questionUnit", type = PersistenceContextType.TRANSACTION)
     EntityManager entityManager;
 
     @Override

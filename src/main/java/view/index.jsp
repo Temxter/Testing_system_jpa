@@ -9,6 +9,6 @@
     <p>This is a system for testing students.</p>
     <h3 align="center">Menu</h3>
     <a href="log_in.jsp">1. Log in</a>
-    <a href="register.jsp">2. Register</a>
+    <a href="auth/register.jsp">2. Register</a>
 </body>
 </html>

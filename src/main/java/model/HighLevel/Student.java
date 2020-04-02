@@ -17,7 +17,6 @@ public class Student implements Serializable {
     private String name;
     @OneToOne(mappedBy = "student")
     private User user;
-
     @OneToMany(mappedBy = "student")
     private List<Mark> marks;
 

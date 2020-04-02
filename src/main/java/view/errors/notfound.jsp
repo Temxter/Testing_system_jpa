@@ -6,6 +6,6 @@
 </head>
 <body>
     <p align="center">Sorry, your request not founded!</p>
-    <a href="index.jsp" align="center">Return to main page</a>
+    <a href="../index.jsp" align="center">Return to main page</a>
 </body>
 </html>

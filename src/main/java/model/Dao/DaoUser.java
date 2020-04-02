@@ -23,10 +23,21 @@ public class DaoUser implements Dao<User> {
         // DB must check
         //        if (users.size() > 1)
         //            throw new DaoException("Users with equals login and password more then one. Amount = " + users.size());
-        if (users.size() == 1)
-            return users.get(0);
-        return null;
+        if (users == null)
+            return null;
+        //if (users.size() == 1)
+        return users.get(0);
     }
+
+    public User getUserByLogin(String login)  {
+        Query query = entityManager.createQuery("FROM USERS WHERE login = :login");
+        query.setParameter("login", login);
+        List<User> users = query.getResultList();
+        if (users == null)
+            return null;
+        return users.get(0);
+    }
+
 
     @Override
     public User get(long id) {
