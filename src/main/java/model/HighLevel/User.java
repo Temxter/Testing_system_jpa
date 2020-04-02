@@ -1,26 +1,43 @@
 package model.HighLevel;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity (name= "USERS")
 public class User implements Serializable {
 
+    @Id
+    @GeneratedValue
+    private int id;
     private String login;
     private String password;
-    private int userType; //student = 1, teacher = 2
+    // ORDINAL = write to DB 1, 2, 3...
+    @Enumerated(value = EnumType.ORDINAL)
+    private UserType userType;
+
     @OneToOne
     private Student student;
 
-    public User() {
-    }
-
-    public User(String login, String password, int userType, Student student) {
+    public User(String login, String password, UserType userType, Student student) {
         this.login = login;
         this.password = password;
         this.userType = userType;
         this.student = student;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public UserType getUserType() {
+        return userType;
+    }
+
+    public void setUserType(UserType userType) {
+        this.userType = userType;
+    }
+
+    public User() {
     }
 
     public String getLogin() {
@@ -37,14 +54,6 @@ public class User implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public int getUserType() {
-        return userType;
-    }
-
-    public void setUserType(int userType) {
-        this.userType = userType;
     }
 
     public Student getStudent() {

@@ -8,7 +8,7 @@
 <body>
 <h3 align="center">Register</h3>
 <form id="login-form" action="/auth" method="post">
-    <input type="hidden" name="type" value="password">
+    <input type="hidden" name="type" value="register">
     <label for="login" action="/auth" method="post">Login: </label>
     <input type="text" id="login" name="login"/>
     <br/>
