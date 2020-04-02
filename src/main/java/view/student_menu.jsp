@@ -10,11 +10,11 @@
 <h4 align="center">Tests</h4>
 <ol>
     <c:forEach items="{unfilledMarks}" var="mark">
-        <li>
-            <a href="test?id=${mark.test.id}">${mark.test.name} ${mark.date}</a>
-        </li>
+        <li><a href="test?id=${mark.test.id}">${mark.test.name} (${mark.date})</a></li>
     </c:forEach>
 </ol>
+
+<h4 align="center">Marks</h4>
 
 <table>
     <tr>
@@ -22,31 +22,17 @@
         <th>Date</th>
         <th>Mark</th>
     </tr>
-
+    <ol>
+    <c:forEach items="{filledMarks}" var="mark">
     <tr>
-        <c:forEach items="{filledMarks}" var="mark">
-            <td>mark.testName</td>
+            <td><li>mark.testName</li></td>
             <td>mark.date</td>
             <td>mark.mark</td>
-        </c:forEach>
     </tr>
+    </c:forEach>
+    </ol>
 
-
-    <tr>
-        <td>Math example</td>
-        <td>20.10.1</td>
-        <td>9</td>
-    </tr>
 </table>
 
-<ol>
-    <c:forEach items="{filledMarks}" var="mark">
-        <li>
-            <a href="test?id=${test.id}">${test.name}</a>
-        </li>
-    </c:forEach>
-</ol>
-
-<h4 align="center">Marks</h4>
 </body>
 </html>

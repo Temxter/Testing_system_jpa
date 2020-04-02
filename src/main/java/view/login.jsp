@@ -8,13 +8,12 @@
 <body>
 <h3 align="center">Log in</h3>
 <form id="login-form">
-    <label for="login">
-        <input type="text" id="login" name="name"/>
-    </label>
+    <input type="hidden" name="type" value="login">
+    <label for="login" action="/auth" method="post">Login: </label>
+        <input type="text" id="login" name="login"/>
     <br/>
-    <label for="password">
-        <input type="password" id="password" name="id"/>
-    </label>
+    <label for="password">Password: </label>
+        <input type="password" id="password" name="password"/>
     <br/>
     <input type="submit" value="Login"/>
 </form>

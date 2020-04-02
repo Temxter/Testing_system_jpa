@@ -25,6 +25,7 @@ public class DaoStudent implements Dao<Student>, Serializable {
         return entityManager.find(Student.class, id);
     }
 
+    @Override
     public List<Student> getAll() {
         Query query = entityManager.createQuery("FROM STUDENTS");
         return query.getResultList();
